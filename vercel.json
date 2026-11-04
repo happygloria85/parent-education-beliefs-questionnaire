@@ -1,0 +1,29 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "builds": [
+    { "src": "parent-questionnaire.html", "use": "@vercel/static" },
+    { "src": "parent-questionnaire.css", "use": "@vercel/static" },
+    { "src": "parent-questionnaire.js", "use": "@vercel/static" },
+    { "src": "parent-questionnaire-statistics.html", "use": "@vercel/static" },
+    { "src": "parent-questionnaire-statistics.css", "use": "@vercel/static" },
+    { "src": "parent-questionnaire-statistics.js", "use": "@vercel/static" },
+    { "src": "api/questionnaire_submissions.py", "use": "@vercel/python" },
+    { "src": "api/questionnaire_statistics.py", "use": "@vercel/python" }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/parent-questionnaire.html" },
+    { "source": "/statistics", "destination": "/parent-questionnaire-statistics.html" },
+    { "source": "/api/questionnaire-submissions", "destination": "/api/questionnaire_submissions" },
+    { "source": "/api/questionnaire-statistics", "destination": "/api/questionnaire_statistics" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

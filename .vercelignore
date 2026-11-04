@@ -1,0 +1,12 @@
+*
+!parent-questionnaire.html
+!parent-questionnaire.css
+!parent-questionnaire.js
+!parent-questionnaire-statistics.html
+!parent-questionnaire-statistics.css
+!parent-questionnaire-statistics.js
+!api/
+!api/questionnaire_submissions.py
+!api/questionnaire_statistics.py
+!requirements.txt
+!vercel.json

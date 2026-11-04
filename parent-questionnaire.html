@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>家长教育信念问卷</title>
+  <link rel="stylesheet" href="parent-questionnaire.css?v=20261104-2" />
+</head>
+<body>
+  <main class="questionnaire-shell">
+    <header class="questionnaire-header">
+      <p class="eyebrow">家长问卷</p>
+      <h1>家长教育信念问卷</h1>
+    </header>
+
+    <section class="panel intro-panel" id="introPanel" hidden aria-labelledby="introTitle">
+      <h2 id="introTitle">问卷填写说明</h2>
+      <div class="intro-copy">
+        <p>以下的问题不同家长可能有不同看法。这些看法本身没有简单的对错，也不存在统一的“理想家长答案”。</p>
+        <p>请结合孩子目前的年龄和发展阶段，根据您<strong>目前真实相信的观点</strong>作答，而不是按照“一个好家长应该怎样想”作答。</p>
+        <p>除题目特别说明外，请将以下陈述理解为一般的学习、活动和发展选择，不涉及重大安全、健康、法律风险，或严重且不可逆的后果。</p>
+      </div>
+      <button class="primary-button" id="startSurveyButton" type="button">开始填写问卷 <span aria-hidden="true">→</span></button>
+    </section>
+
+    <section class="panel profile-panel" id="profilePanel" aria-labelledby="profileTitle">
+      <div class="section-heading">
+        <h2 id="profileTitle">请先填写基本信息</h2>
+        <span class="required-note">均为必填</span>
+      </div>
+      <form id="profileForm" novalidate>
+        <div class="field-grid">
+          <label class="field">
+            <span>您愿意被称呼的方式</span>
+            <input name="parentName" type="text" autocomplete="name" placeholder="请输入您希望使用的称呼" required />
+          </label>
+          <label class="field">
+            <span>孩子所在学校</span>
+            <input name="school" type="text" autocomplete="organization" placeholder="请输入学校名称" required />
+          </label>
+          <label class="field">
+            <span>年级</span>
+            <select name="grade" required>
+              <option value="" selected disabled>请选择年级</option>
+              <option>幼儿园</option>
+              <option>小学一年级</option>
+              <option>小学二年级</option>
+              <option>小学三年级</option>
+              <option>小学四年级</option>
+              <option>小学五年级</option>
+              <option>小学六年级</option>
+              <option>初一</option>
+              <option>初二</option>
+              <option>初三</option>
+              <option>高一</option>
+              <option>高二</option>
+              <option>高三</option>
+              <option>大学及以上</option>
+            </select>
+          </label>
+          <fieldset class="field gender-field">
+            <legend>孩子性别</legend>
+            <div class="gender-options">
+              <label><input type="radio" name="gender" value="男" required /><span>男</span></label>
+              <label><input type="radio" name="gender" value="女" /><span>女</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <p class="form-error" id="profileError" role="alert"></p>
+        <button class="primary-button" type="submit">继续 <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+
+    <section class="panel survey-panel" id="surveyPanel" hidden aria-labelledby="surveyTitle">
+      <div class="survey-topbar">
+        <div>
+          <p class="eyebrow">请根据真实想法作答</p>
+          <h2 id="surveyTitle">家长教育信念问卷</h2>
+        </div>
+        <span class="progress-count" id="progressCount">第 1 / 21 题</span>
+      </div>
+      <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+
+      <form id="surveyForm" novalidate>
+        <div class="question-stage" id="questionStage"></div>
+        <p class="form-error" id="answerError" role="alert"></p>
+        <div class="survey-actions">
+          <button class="secondary-button" id="previousButton" type="button">上一题</button>
+          <button class="primary-button" id="nextButton" type="button">下一题 <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel completion-panel" id="completionPanel" hidden aria-live="polite">
+      <div class="completion-mark" aria-hidden="true">✓</div>
+      <h2>问卷已完成</h2>
+      <p>感谢你的填写，结果已保存。</p>
+    </section>
+  </main>
+  <script src="parent-questionnaire.js"></script>
+</body>
+</html>

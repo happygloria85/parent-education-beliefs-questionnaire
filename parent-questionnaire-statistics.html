@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>家长教育信念问卷统计</title>
+  <link rel="stylesheet" href="parent-questionnaire-statistics.css" />
+</head>
+<body>
+  <main class="statistics-shell">
+    <header class="statistics-header">
+      <div>
+        <p class="eyebrow">问卷结果统计</p>
+        <h1>家长教育信念问卷</h1>
+        <p class="subtitle">21 道题的选项分布，仅展示匿名汇总数据。</p>
+      </div>
+      <div class="response-total"><strong id="completedCount">—</strong><span>份已完成问卷</span></div>
+    </header>
+
+    <div class="status-message" id="statusMessage">正在读取统计结果...</div>
+    <section class="question-list" id="questionList" aria-live="polite"></section>
+  </main>
+  <script src="parent-questionnaire-statistics.js"></script>
+</body>
+</html>

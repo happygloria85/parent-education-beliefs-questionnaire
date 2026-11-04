@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+.neon
+.venv/
+database/*.db
+id_ed25519
+id_ed25519.pub
+.vercel/
+.agents/
+.codex/
+skills-lock.json
