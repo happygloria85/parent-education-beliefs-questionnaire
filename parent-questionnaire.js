@@ -26,6 +26,7 @@
   const introPanel = document.querySelector('#introPanel');
   const profilePanel = document.querySelector('#profilePanel');
   const surveyPanel = document.querySelector('#surveyPanel');
+  const questionnaireHeader = document.querySelector('.questionnaire-header');
   const completionPanel = document.querySelector('#completionPanel');
   const profileForm = document.querySelector('#profileForm');
   const profileError = document.querySelector('#profileError');
@@ -42,6 +43,7 @@
   document.querySelector('#startSurveyButton').addEventListener('click', () => {
     introPanel.hidden = true;
     surveyPanel.hidden = false;
+    questionnaireHeader.hidden = true;
     renderQuestion();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
